@@ -34,6 +34,7 @@ You can tackle the Katas in whatever order you may choose. The order specified h
 - [Add all numbers](add-all-numbers/README.md)
 - [forEach](for-each/README.md)
 - [Filter even numbers](filter-even-numbers/README.md)
+- [Copy](copy/README.md)
 - [Alphabetical](alphabetical/README.md)
 - [Fruit counter](fruit-counter/README.md)
 - [Grouper](grouper/README.md)
@@ -64,7 +65,7 @@ You can tackle the Katas in whatever order you may choose. The order specified h
 
 Always start with the tests. Think about a ~~good~~ great test name and start with the `expect`. For instance, lets think about a functionality that gives us the highest number of an array.
 
-We create the file `<NAME>.<KATA>.spec.ts` in `highest-number/solutions` A first test could be:
+We create the file `<NAME>.<KATA>.spec.ts` in `highest-number/solutions`. A first test could be:
 
 ```typescript
 describe('getHighestNumber', () => {
