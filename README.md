@@ -11,11 +11,11 @@
 
 **Table of Contents**
 
--   [Introduction](#introduction)
--   [Katas](#katas)
--   [Development](#development)
--   [Workflow](#workflow)
--   [Contributing](#contributing)
+- [Introduction](#introduction)
+- [Katas](#katas)
+- [Development](#development)
+- [Workflow](#workflow)
+- [Contributing](#contributing)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -25,53 +25,47 @@ JavaScript/TypeScript Katas you can use to hone your skills as a developer! Try 
 
 ## Katas
 
-I recommend that you create a file with `<NAME>.<KATA>.ts` and `<NAME>.<KATA>.spec.ts` for the test, where `<NAME>` is the main characteristic of the Kata and `<NAME>` is the name of the Kata. Only if you find yourself stuck you might check the answer.
+I recommend that you create a file with `<YOUR_USERNAME>.<NAME_OF_KATA>.ts` and `<YOUR_USERNAME>.<NAME_OF_KATA>.spec.ts` for the test. Only if you find yourself stuck you might check the answer.
 
 You can tackle the Katas in whatever order you may choose. The order specified here has more to do with difficulty of the Kata.
 
--   [Highest number](highest-number/README.md)
--   [Power of two](power-of-two/README.md)
--   [Add all numbers](add-all-numbers/README.md)
--   [forEach](for-each/README.md)
--   [Filter even numbers](filter-even-numbers/README.md)
--   [Flat](flat/README.md)
--   [Alphabetical](alphabetical/README.md)
--   [Fruit counter](fruit-counter/README.md)
--   [Grouper](grouper/README.md)
--   [Fizz buzz](fizz-buzz/README.md)
--   [Calculator](calculator/README.md)
--   [Prime numbers](prime-numbers/README.md)
--   [Caesar's cypher](caesar/README.md)
--   [Change calculator](change-calculator/README.md)
--   [Christmas tree](christmas-tree/README.md)
--   [Word wrap](word-wrap/README.md)
--   [99 bottles](99-bottles/README.md)
+- [Highest number](highest-number/README.md)
+- [Power of two](power-of-two/README.md)
+- [Add all numbers](add-all-numbers/README.md)
+- [Filter even numbers](filter-even-numbers/README.md)
+- [Alphabetical](alphabetical/README.md)
+- [Fruit counter](fruit-counter/README.md)
+- [Grouper](grouper/README.md)
+- [Fizz buzz](fizz-buzz/README.md)
+- [Calculator](calculator/README.md)
+- [Prime numbers](prime-numbers/README.md)
+- [Caesar's cypher](caesar/README.md)
+- [Change calculator](change-calculator/README.md)
+- [Word wrap](word-wrap/README.md)
+- [99 bottles](99-bottles/README.md)
+- [99 bottles OOP](99-bottles-oop/README.md)
 
-## Setup
+## Development
 
-1. [Fork project on Github](https://github.com/cesalberca/katas.git)
-2. Clone your project `git clone https://github.com/<YOUR_USER>/katas.git`
-3. Create a branch from `main` where you'll work, `dev` for example.
-4. Track remote upstream branch: `git remote add upstream https://github.com/cesalberca/katas.git`.
-5. To update changes from upstream: `git pull upstream main`.
-6. To propose changes you have to go to `main` branch, make a new branch from it, commit changes and then, on Github, make a Pull request from `<YOUR_BRANCH>` to `main`. If you want to bring a single commit from your dev branch you can use [cherry-pick](https://git-scm.com/docs/git-cherry-pick).
-7. Install [NodeJS](https://nodejs.org/en/)
-8. cd into it `cd katas`.
-9. Install dependencies `npm i`.
-10. Run tests once with `npm test` (or constantly with `npm run test:watch`).
-11. Code your solutions inside the directories `my-solutions`.
+1. Install [NodeJS](https://nodejs.org/en/)
+2. Fork project
+3. Clone your project `git clone https://github.com/cesalberca/katas.git`
+4. cd into it `cd katas`
+5. Install dependencies `npm i`
+6. Run tests `npm test:watch`
+7. Code!
 
 ## Workflow
 
 Always start with the tests. Think about a ~~good~~ great test name and start with the `expect`. For instance, lets think about a functionality that gives us the highest number of an array.
 
-We create the file `<NAME>.<KATA>.spec.ts` in `highest-number/solutions`. A first test could be:
+We create the file `<YOUR_USERNAME>.<NAME_OF_KATA>.spec.ts` in `highest-number/solutions` A first test could be:
 
 ```typescript
 describe('getHighestNumber', () => {
-    it('should get the highest number given an array of one number', () => {
-        expect(actual).toBe(42)
-    })
+  it('should get the highest number given an array of one number', () => {
+    expect(actual).toBe(42)
+  })
 })
 ```
 
@@ -83,21 +77,21 @@ Now let's finish the test:
 import { getHighestNumber } from './highest-number'
 
 describe('getHighestNumber', () => {
-    it('should get the highest number given an array of one number', () => {
-        const given = [42]
+  it('should get the highest number given an array of one number', () => {
+    const given = [42]
 
-        const actual = getHighestNumber(given)
+    const actual = getHighestNumber(given)
 
-        expect(actual).toBe(42)
-    })
+    expect(actual).toBe(42)
+  })
 })
 ```
 
-Time to implement the function `getHighestNumber` inside a file we create in `highest-number/solutions` named `<NAME>.<KATA>.ts`:
+Time to implement the function `getHighestNumber` inside a file we create in `highest-number/solutions` named `<YOUR_USERNAME>.<NAME_OF_KATA>.ts`:
 
 ```typescript
 export function getHighestNumber(numbers: number[]): number {
-    return numbers[0]
+  return numbers[0]
 }
 ```
 
@@ -107,11 +101,11 @@ Now, you might think this is utterly incomplete, right? Well, _it depends_, if a
 
 ```typescript
 it('should get the highest number given an array of several numbers', () => {
-    const given = [1, 3, 2]
+  const given = [1, 3, 2]
 
-    const actual = getHighestNumber(given)
+  const actual = getHighestNumber(given)
 
-    expect(actual).toBe(3)
+  expect(actual).toBe(3)
 })
 ```
 
@@ -121,15 +115,15 @@ Because we have the previous test, whenever we change the functionality we shoul
 
 ```typescript
 export function getHighestNumber(numbers: number[]): number {
-    let highestNumber = numbers[0]
+  let highestNumber = numbers[0]
 
-    for (let i = 0; i < numbers.length; i++) {
-        if (numbers[i] > highestNumber) {
-            highestNumber = numbers[i]
-        }
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > highestNumber) {
+      highestNumber = numbers[i]
     }
+  }
 
-    return highestNumber
+  return highestNumber
 }
 ```
 
@@ -137,7 +131,7 @@ Great! Time to commit again. However, we can always improve our code without cha
 
 ```typescript
 export function getHighestNumber(numbers: number[]): number {
-    return numbers.slice().sort()[numbers.length - 1]
+  return numbers.slice().sort()[numbers.length - 1]
 }
 ```
 
@@ -147,4 +141,4 @@ _Note: We did a slice before sort because sort mutates the original array and we
 
 ## Contributing
 
-If you have an interesting solution create a PR to this project with the name of the file like this: `<NAME>.<KATA>.ts`.
+If you have an interesting solution create a PR to this project with the name of the file like this: `<YOUR_USERNAME>.<NAME_OF_KATA>.ts`.
