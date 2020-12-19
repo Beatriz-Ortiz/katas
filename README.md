@@ -32,28 +32,35 @@ You can tackle the Katas in whatever order you may choose. The order specified h
 - [Highest number](highest-number/README.md)
 - [Power of two](power-of-two/README.md)
 - [Add all numbers](add-all-numbers/README.md)
+- [Fizz buzz](fizz-buzz/README.md)
+- [forEach](for-each/README.md)
 - [Filter even numbers](filter-even-numbers/README.md)
+- [Flat](flat/README.md)
 - [Alphabetical](alphabetical/README.md)
 - [Fruit counter](fruit-counter/README.md)
 - [Grouper](grouper/README.md)
-- [Fizz buzz](fizz-buzz/README.md)
+- [Range](range/README.md)
 - [Calculator](calculator/README.md)
 - [Prime numbers](prime-numbers/README.md)
 - [Caesar's cypher](caesar/README.md)
 - [Change calculator](change-calculator/README.md)
+- [Christmas tree](christmas-tree/README.md)
 - [Word wrap](word-wrap/README.md)
 - [99 bottles](99-bottles/README.md)
-- [99 bottles OOP](99-bottles-oop/README.md)
 
-## Development
+## Setup
 
-1. Install [NodeJS](https://nodejs.org/en/)
-2. Fork project
-3. Clone your project `git clone https://github.com/cesalberca/katas.git`
-4. cd into it `cd katas`
-5. Install dependencies `npm i`
-6. Run tests `npm test:watch`
-7. Code!
+1. [Fork project on Github](https://github.com/cesalberca/katas.git)
+2. Clone your project `git clone https://github.com/<YOUR_USER>/katas.git`
+3. Create a branch from `main` where you'll work, `dev` for example.
+4. Track remote upstream branch: `git remote add upstream https://github.com/cesalberca/katas.git`.
+5. To update changes from upstream: `git pull upstream main`.
+6. To propose changes you have to go to `main` branch, make a new branch from it, commit changes and then, on Github, make a Pull request from `<YOUR_BRANCH>` to `main`. If you want to bring a single commit from your dev branch you can use [cherry-pick](https://git-scm.com/docs/git-cherry-pick).
+7. Install [NodeJS](https://nodejs.org/en/)
+8. cd into it `cd katas`.
+9. Install dependencies `npm i`.
+10. Run tests once with `npm test` (or constantly with `npm run test:watch`).
+11. Code your solutions inside the directories `my-solutions`.
 
 ## Workflow
 
